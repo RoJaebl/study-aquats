@@ -1,18 +1,21 @@
 {
-  "include": ["src"],
+  "include": ["src"], // typescript파일이 어디서 작성되는지 경로를 입력한다.
   "compilerOptions": {
-    "outFile": "output.js",
-    "noImplicitAny": true,
-    "target": "es6",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "baseUrl": ".",
-    "paths": {
-      "*": ["node_modules/*", "src/script/*"]
-    },
-    "strict": true /* Enable all strict type-checking options. */,
-    "allowSyntheticDefaultImports": true,
+    "outDir": "build", // .ts가 .js로 변환되어 저장될 폴더 지정
+    "target": "es6", // 변환된 JS버전을 설정한다.
+    "lib": ["es6"],
+    "strict": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true
+    "module": "commonjs"
+    // "outFile": "output.js",
+    // "noImplicitAny": true,
+    // "moduleResolution": "node",
+    // "baseUrl": ".",
+    // "paths": {
+    //   "*": ["node_modules/*", "src/script/*"]
+    // },
+    // "strict": true /* Enable all strict type-checking options. */,
+    // "allowSyntheticDefaultImports": true,
+    // "forceConsistentCasingInFileNames": true
   }
 }

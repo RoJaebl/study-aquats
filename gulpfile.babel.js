@@ -18,14 +18,14 @@ const routes = {
   server: "build",
   del: ["build", ".publish"],
   ts: {
-    watch: "src/script/**/*.ts",
-    src: "src/script/main.ts",
-    dest: "build/script",
+    watch: "src/**/*.ts",
+    src: "src/index.ts",
+    dest: "build/",
   },
   js: {
-    watch: "src/script/**/*.js",
-    src: "src/script/main.js",
-    dest: "build/script",
+    watch: "src/**/*.js",
+    src: "src/index.js",
+    dest: "build/",
   },
 };
 
@@ -42,16 +42,13 @@ const Js = () =>
   Gulp.src(routes.js.src)
     .pipe(
       GulpJs({
-        transform: [
-          NodeBabelify.configure({ presets: ["@babel/preset-env"] }),
-          ["NodeUglifyify", { global: true }],
-        ],
+        transform: [NodeBabelify.configure({ presets: ["@babel/preset-env"] })],
       })
     )
     .pipe(GulpUglify())
     .pipe(Gulp.dest(routes.js.dest));
 const Ts = () =>
-  Gulp.src(routes.ts.src).pipe(GulpTs()).pipe(Gulp.dest(routes.ts.dest));
+  Gulp.src(routes.ts.src).pipe(Tsconfig()).js.pipe(Gulp.dest(routes.ts.dest));
 
 // Gulp task
 const preset = Gulp.series([Delete]);
