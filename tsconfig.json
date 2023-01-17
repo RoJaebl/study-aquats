@@ -6,7 +6,7 @@
     "lib": ["es6"],
     "strict": true,
     "esModuleInterop": true,
-    "module": "commonjs"
+    "module": "ES6"
     // "outFile": "output.js",
     // "noImplicitAny": true,
     // "moduleResolution": "node",

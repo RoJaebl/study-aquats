@@ -20,3 +20,6 @@ class Block implements BlockShape {
     return crypto.createHash("sha256").update(toHash).digest("hex");
   }
 }
+
+const blockChain = new Block('hey',1,'initBlock');
+console.log(blockChain.hash);

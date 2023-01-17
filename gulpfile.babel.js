@@ -52,7 +52,7 @@ const Ts = () =>
 
 // Gulp task
 const preset = Gulp.series([Delete]);
-const assets = Gulp.series([Js, Ts]);
+const assets = Gulp.series([ Ts]);
 const postDev = Gulp.parallel([Server, Watch]);
 
 export const build = Gulp.series([preset, assets]);
